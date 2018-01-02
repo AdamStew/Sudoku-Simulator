@@ -14,6 +14,13 @@ namespace Sudoku_Simulator
             this.hashSet = new HashSet<int>();
         }
 
+        public void SetTile(Tile tile)
+        {
+            this.tileNum = tile.GetTileNum();
+            this.valid = tile.IsValid;
+            this.hashSet = tile.GetAttempts();
+        }
+
         public void SetTileNum(int tileNum)
         {
             this.tileNum = tileNum;
@@ -38,6 +45,11 @@ namespace Sudoku_Simulator
         public void SetValidity(bool validity) => this.valid = validity;
 
         public bool IsValid => this.valid;
+
+        public HashSet<int> GetAttempts()
+        {
+            return this.hashSet;
+        }
 
         public void Attempt(int number) => this.hashSet.Add(number);
 

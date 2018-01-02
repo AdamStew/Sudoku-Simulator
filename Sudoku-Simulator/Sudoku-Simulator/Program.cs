@@ -13,6 +13,18 @@ namespace Sudoku_Simulator
             Board board = new Board();
             board.GenerateRandomNumber(0,0); //Enter starting coordinates (should always be 0, 0);
             board.Print();
+            Console.WriteLine();
+
+            board.SelectDifficulty("easy");
+            board.Print();
+            Console.WriteLine();
+
+            board.Solve(0, 0);
+            board.Print();
+            Console.WriteLine();
+
+            Board solution = new Board();
+            solution.SetBoard(board);
             Console.ReadLine();
         }
     }
